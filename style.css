@@ -1,0 +1,165 @@
+.container{
+    height: 2000px;
+    display: grid;
+    grid-template-rows:repeat(40, 100px);
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+    grid-template
+    align-content: center;
+
+}
+.menu{
+    grid-row: 1;
+    grid-column: 1/4;
+}
+.node_plot{
+ grid-row: 2/span 10;
+ grid-column: 1/ span 10;
+
+}
+
+.pes_plot{
+    grid-row: span 11/span 10;
+    grid-column: 1/ span 10;
+}
+
+
+.plan{
+    grid-row: span 10/-2;
+    grid-column: 1/ span 5;
+}
+.copyright {
+  grid-row: -1;
+  background-color: #98FF98;
+}
+
+
+
+svg {
+    background-color: #FFF;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+svg:not(.active):not(.ctrl) {
+    cursor: crosshair;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.calculation-q {
+    background-color: lightgrey;
+}
+
+.plan {
+    background-color: lightgrey;
+}
+
+.chart rect {
+    fill: steelblue;
+}
+
+.chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: middle;
+}
+
+.subway line {
+    fill: none;
+    stroke: #9ecae1;
+    stroke-width: 1px;
+}
+
+.subway text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: middle;
+}
+
+
+
+path {
+    stroke: #f99e1a;
+    shape-rendering: geometricPrecision;
+    stroke-width: 1px;
+    opacity: .5;
+}
+path.link {
+    fill: none;
+    stroke: #BDFCC9;
+    stroke-width: 4px;
+    opacity: .5;
+    cursor: off;
+}
+path.link.CC {
+    stroke: #88ccd2;
+}
+path.link.RED {
+    stroke: #b43e3e;
+}
+path.link.hidden {
+    stroke-width: 0;
+}
+
+rect {
+    fill: #49E9BD;
+    cursor: pointer;
+    stroke-width:3;
+    stroke:rgb(0,0,0);
+}
+rect.nodes  {
+    opacity:.5;
+    fill: #49E9BD;
+    cursor: pointer;
+}
+rect.nodes.TS  {
+    fill: #f44b42;
+}
+rect.nodes.origin {
+    stroke-width: 1.5px;
+    stroke: #9ecae1;
+    fill: #9ecae1;
+    cursor: pointer;
+}
+
+
+rect.state {
+    fill: #49E9BD;
+    cursor: pointer;
+    stroke-width:0;
+    stroke:rgb(0,0,0);
+}
+
+
+
+p {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Old Standard TT', serif;
+    color: #233a24;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Old Standard TT', serif;
+    color: Grey;
+}
+
+h1 {
+    font-size: 2em;
+}

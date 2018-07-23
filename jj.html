@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+
+<head>
+    <title>Reactor</title>
+
+
+
+    <!-- D3 dependencies-->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js" charset="utf-8"></script>
+
+    <!-- Threes dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.1.2/math.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.js" charset="utf-8"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/renderers/SVGRenderer.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+
+
+
+<body>
+    <h1>Reactor</h1>
+
+
+    <div class="container">
+
+        <div class="menu">
+            <button id='option1'>Add Confirmed Connection</button>
+            <button id='option2'>Add Expected Connection</button>
+            <button id='option2'>Add Side Product</button>
+        </div>
+
+        <div class="node_plot">
+            <h3>Molecular Nodes</h3>
+            <svg class="ChemicalNodes"></svg>
+        </div>
+
+
+        <div class=pes_plot>
+            <h3>Potential Energy Surface</h3>
+            <p>Using the selected node above as the origin, a subway PES with all known connections is drawn.</p>
+            <div id="threeD"></div>
+            <svg class="SubwayPES"></svg>
+        </div>
+
+
+        <div class="plan">
+            <h2>TODO</h2>
+            <p>
+                I want to add invisible circles around the rendered molecules so that I can check them for colisions with a force simulation like the one used in the first graph. This should allow me to automatically place the renederings in a smart way.
+                 I also need to implement different color connections.
+            </p>
+
+
+            The goal here is to take a starting geometry and explore a potential surface with:
+
+            <ul>
+                <li>Optimization Calculations</li>
+                <li>IRC</li>
+                <li>Single Point Energies</li>
+            </ul>
+
+            The molecules are rendered with THREEjs, I need to add meshing textures them properly. Right now they just inheirit the last texture that was used and applies it to the whole darn thing.
+            <h1>Define Initial Molecules</h1>
+            <ul>
+                <li>Au<sub>2</sub><sup>+</sup></li>
+                <li>CH<sub>4</sub></li>
+            </ul>
+
+            <h1>Creating Reactant Equilibrium Positions</h1>
+
+            <h1>Mix Reactants With Trajectories</h1> Isolate wells from trajectories
+
+            <h1>Run Optimizations on Wells</h1> Keep a json file with each well.
+
+            <h1>IRC Between Wells</h1> Generate the useful set of intermeadiate coords.
+
+
+            <h1>Identify the Transition States</h1> Pull the high energy from this result and run a TS optimization.
+
+            <h1>IRC From TS to Each Well</h1> This confirms that the TS found is the correct one. In a graph store each well, connect each well with TS --exception, if between two well there is no increase in engergy.
+        </div>
+
+        <div class="copyright">
+            © 2018 Copyright Nicholas R. Keyes
+        </div>
+
+
+    </div>
+
+    <script src="GraphManager.js"></script>
+    <script src="Render.js"></script>
+
+
+
+
+
+
+        <!--/.Copyright-->
+
+
+
+</body>
+
+</html>
